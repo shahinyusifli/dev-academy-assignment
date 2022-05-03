@@ -42,4 +42,37 @@ app.UseCors(MyAllowSpecificOrigins);
 
 app.MapGet("/", () => "Hello World!");
 
+
+app.MapGet("/messages", async(MessageDb db) => await db.Messages.ToListAsync());
+
+
+
+app.MapPost("/create", async(MessageDb db, Message message) => {
+await db.Messages.AddAsync(message);
+await db.SaveChangesAsync();
+return Results.Created($"/message/{message.MessageId}", message);
+});
+
+app.MapPut("/message/{messageId}", async (MessageDb db, Message updateMessage, int messageId) =>
+{
+var messageItem = await db.Messages.FindAsync(messageId);
+if (messageItem is null) return Results.NotFound();
+messageItem.TopicName = updateMessage.TopicName;
+messageItem.TopicName = updateMessage.TopicName;
+await db.SaveChangesAsync();
+return Results.NoContent();
+});
+
+
+app.MapDelete("/message/{messageid}", async (MessageDb db, int messageid) =>
+{
+var todo = await db.Messages.FindAsync(messageid);
+if (todo is null)
+{
+return Results.NotFound();
+}
+db.Messages.Remove(todo);
+await db.SaveChangesAsync();
+return Results.Ok();
+ });
 app.Run();
