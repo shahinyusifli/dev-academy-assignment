@@ -1,0 +1,3 @@
+[submodule "dev-academy-assigment-front-end"]
+	path = dev-academy-assigment-front-end
+	url = https://github.com/shahinyusifli/dev-academy-assigment-front-end.git
