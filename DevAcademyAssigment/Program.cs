@@ -38,8 +38,18 @@ app.UseCors(MyAllowSpecificOrigins);
 
 app.MapGet("/", () => "Hello World!");
 
+//Presents the topics (topic name, message count, time of the last message)
+app.MapGet("/messages", async(MessageDb db) => await db.Messages
+.GroupBy(topic => topic.TopicName)
+.Select(
+  messageGroup => new {
 
-app.MapGet("/messages", async(MessageDb db) => await db.Messages.ToListAsync());
+     TopicName = messageGroup.Key, TotalMessages = messageGroup.Count(),
+     TimeOfLastMessage = messageGroup.Max(f => f.Date) 
+
+     }
+).OrderBy(time => time.TimeOfLastMessage)
+.ToListAsync());
 
 
 
