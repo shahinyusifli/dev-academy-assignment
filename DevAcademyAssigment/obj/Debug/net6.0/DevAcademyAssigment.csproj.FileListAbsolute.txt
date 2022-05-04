@@ -52,3 +52,6 @@ C:\Users\shahin.yusifli\Desktop\Dev Academy\dev_academy_assigment\dev-academy-as
 C:\Users\shahin.yusifli\Desktop\Dev Academy\dev_academy_assigment\dev-academy-assignment\DevAcademyAssigment\obj\Debug\net6.0\DevAcademyAssigment.pdb
 C:\Users\shahin.yusifli\Desktop\Dev Academy\dev_academy_assigment\dev-academy-assignment\DevAcademyAssigment\obj\Debug\net6.0\DevAcademyAssigment.genruntimeconfig.cache
 C:\Users\shahin.yusifli\Desktop\Dev Academy\dev_academy_assigment\dev-academy-assignment\DevAcademyAssigment\obj\Debug\net6.0\ref\DevAcademyAssigment.dll
+C:\Users\shahin.yusifli\Desktop\Dev Academy\dev_academy_assigment\dev-academy-assignment\DevAcademyAssigment\bin\Debug\net6.0\Front-end\package-lock.json
+C:\Users\shahin.yusifli\Desktop\Dev Academy\dev_academy_assigment\dev-academy-assignment\DevAcademyAssigment\bin\Debug\net6.0\Front-end\package.json
+C:\Users\shahin.yusifli\Desktop\Dev Academy\dev_academy_assigment\dev-academy-assignment\DevAcademyAssigment\bin\Debug\net6.0\Front-end\public\manifest.json

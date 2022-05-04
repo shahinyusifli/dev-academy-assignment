@@ -5,15 +5,14 @@ using DevAcademyAssigment.Models;
 
 
 string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("Messages") ?? "Data Source=Messages.db";
+var connectionString = builder.Configuration.GetConnectionString("messages") ?? "Data Source=messages.db";
 
 builder.Services.AddDbContext<MessageDb>(options => options.UseSqlite(connectionString));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-   c.SwaggerDoc("v1", new OpenApiInfo { Title = "Messages API", Description = "Messages messages", Version = "v1" });
+   c.SwaggerDoc("v1", new OpenApiInfo { Title = "Message API", Description = "Message message", Version = "v1" });
 });
 
 builder.Services.AddCors(options =>
@@ -25,20 +24,17 @@ builder.Services.AddCors(options =>
     });
 });
 
-
-
-
-
-
-
 var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pizza API V1");
+c.SwaggerEndpoint("/swagger/v1/swagger.json", "Message API V1");
 });
 
 app.UseCors(MyAllowSpecificOrigins);
+
+
+
 
 app.MapGet("/", () => "Hello World!");
 
