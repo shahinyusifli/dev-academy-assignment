@@ -66,7 +66,7 @@ var todo = await db.Messages.FindAsync(messageid);
 if (todo is null)
 {
 return Results.NotFound();
-}
+} 
 db.Messages.Remove(todo);
 await db.SaveChangesAsync();
 return Results.Ok();
